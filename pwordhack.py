@@ -7,41 +7,57 @@ year = date.today().year
 y = str(year)
 m = str(month)
 
-if w == 1:
+if w == 0:
     w = 'Monday'
-elif w == 2:
+    x = 8
+elif w == 1:
     w = 'Tuesday'
-elif w == 3:
+    x = 8
+elif w == 2:
     w = 'Wednesday'
-elif w == 4:
+    x = 8
+elif w == 3:
     w = 'Thursday'
-elif w == 5:
+    x = 9
+elif w == 4:
     w = 'Friday'
+    x = 9
 elif w == 6:
     w = 'Saturday'
-elif w == 7:
+    x = 10
+elif w == 6:
     w = 'Sunday'
+    x = 10
 
-Username = (w + m + y)
-print (Username)
+print (w + m + y)
 
-pWord = ('words.txt')
-#q = pWord.read()
-# p = re.sub('r'([a-z][A-Z]),'r'\1'r',q)
-#print(p)
-posWords = []
-O = open(pWord, 'r')
-Open = O.read()O.splitlines()
-for x in range (0, len(Open)-1):
-    if Open[x] == 6:
-        append.posWords()
-    else:
-        pass
+f = open("words.txt")
 
-print (posWords)
-print (Open)        
+characters = ['!','"','£','$','%','^','&','*']
 
 
+import ocpsecurity
 
+sec = ocpsecurity.security()
+
+usr_name = ('Friday22017')
+
+for line in f:    
+    word = line.rstrip("\n")
+    if len(word) == x:
+        for digit in range(0,10):
+            for y in range(0,len(characters)-1):
+                pWord = word.capitalize() + str(digit) + characters[y]
+                response = sec.SignIn(usr_name,pWord)
+                if response != "Access Denied":
+                    print('pwd:',pWord,'response:',response)
+
+#poswords.append(word)
+#print (len(poswords1))
+#print (poswords1[0], "\t",poswords1[len(poswords1)-1])
+
+#for line in poswords1:
+#    poswords1.title()
+print(len(pWord)/1)
 
 
